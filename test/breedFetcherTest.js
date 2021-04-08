@@ -21,14 +21,19 @@ describe('fetchBreedDescription', () => {
 
   it('returns a string description for invalid user input, via callback', (done) => {
     fetchBreedDescription('12ghjj', (err, desc) => {
-      // we expect no error for this scenario
-      assert.equal(err, null);
+      // we expect no desc for this scenario
+      assert.equal(desc, null);
 
-       const expectedDesc = 'Breed not found';
+      const expectedDesc = 'Breed not found';
 
-      // // compare returned description
+      // // // compare returned description
       // assert.equal(expectedDesc, desc.trim());
-      assert.equal(null);
+      // // assert.equal(null);
+      //--- 
+      assert.equal(expectedDesc, err);
+      // assert.equal(null);
+      
+
       done();
     });
   });
